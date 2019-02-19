@@ -1,4 +1,4 @@
-{% set version = '1.4.4' %}
+{% set version = "1.4.5" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,12 +12,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/diveMove_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/diveMove/diveMove_{{ version }}.tar.gz
-  sha256: ac94d3bd9f8579bdf3ea7cb2fbfdacb8a8b0989fcea84693cf15f160d9b40357
+  sha256: caefc11f3f66fe0b8104e5a6db46b02bee8daac8c9a796e03bb9e0e34b2e3352
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
