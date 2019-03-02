@@ -1,5 +1,4 @@
-{% set version = "1.4.5" %}
-
+{% set version = '1.4.5' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,32 +7,37 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: diveMove_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/diveMove_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/diveMove/diveMove_{{ version }}.tar.gz
   sha256: caefc11f3f66fe0b8104e5a6db46b02bee8daac8c9a796e03bb9e0e34b2e3352
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
+  build:
+    - {{ compiler('c') }}        # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-kernsmooth
-    - r-catools
     - r-geosphere
     - r-quantreg
     - r-unireg
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-kernsmooth
-    - r-catools
     - r-geosphere
     - r-quantreg
     - r-unireg
@@ -53,9 +57,28 @@ about:
 
 extra:
   recipe-maintainers:
+    - conda-forge/r
     - alexetnunes
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
+
+# Package: diveMove
+# Type: Package
+# Title: Dive Analysis and Calibration
+# Version: 1.4.5
+# Depends: R (>= 2.13.0), methods, stats4
+# Suggests: knitr, lattice, tcltk
+# Imports: KernSmooth, quantreg, uniReg, geosphere
+# Author: Sebastian P. Luque <spluque@gmail.com>
+# Maintainer: Sebastian P. Luque <spluque@gmail.com>
+# Description: Utilities to represent, visualize, filter, analyse, and summarize time-depth recorder (TDR) data.  Miscellaneous functions for handling location data are also provided.
+# LazyLoad: yes
+# LazyData: no
+# ZipData: no
+# BuildResaveData: no
+# VignetteBuilder: knitr
+# Collate: AllClass.R AllGenerics.R AllMethod.R austFilter.R bouts.R calibrate.R detDive.R detPhase.R distSpeed.R diveStats.R oneDiveStats.R plotTDR.R plotZOC.R readLocs.R readTDR.R runquantile.R speedStats.R stampDive.R zoc.R zzz.R
+# NeedsCompilation: yes
+# License: GPL-3
+# URL: https://github.com/spluque/diveMove
+# Packaged: 2019-01-03 04:40:49 UTC; sluque
+# Repository: CRAN
+# Date/Publication: 2019-01-03 15:10:03 UTC

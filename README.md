@@ -18,8 +18,9 @@ Summary: Utilities to represent, visualize, filter, analyse, and summarize time-
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-divemove-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-divemove-feedstock)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-divemove-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-divemove-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-divemove-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-divemove-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-divemove-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-divemove-feedstock/branch/master)
 
 Current release info
 ====================
@@ -114,9 +115,5 @@ Feedstock Maintainers
 =====================
 
 * [@alexetnunes](https://github.com/alexetnunes/)
-* [@bgruening](https://github.com/bgruening/)
-* [@cbrueffer](https://github.com/cbrueffer/)
-* [@daler](https://github.com/daler/)
-* [@jdblischak](https://github.com/jdblischak/)
-* [@johanneskoester](https://github.com/johanneskoester/)
+* [@conda-forge/r](https://github.com/conda-forge/r/)
 
