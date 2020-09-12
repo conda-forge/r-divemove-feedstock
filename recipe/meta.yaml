@@ -32,6 +32,7 @@ requirements:
     - r-base
     - r-kernsmooth
     - r-geosphere
+    - r-plotly
     - r-quantreg
     - r-unireg
   run:
@@ -39,6 +40,7 @@ requirements:
     - {{ native }}gcc-libs         # [win]
     - r-kernsmooth
     - r-geosphere
+    - r-plotly
     - r-quantreg
     - r-unireg
 
@@ -49,10 +51,11 @@ test:
 
 about:
   home: https://github.com/spluque/diveMove
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Utilities to represent, visualize, filter, analyse, and summarize time-depth recorder (TDR) data.  Miscellaneous functions for handling location data are also provided.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
