@@ -1,4 +1,4 @@
-{% set version = "1.5.2" %}
+{% set version = "1.5.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/diveMove_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/diveMove/diveMove_{{ version }}.tar.gz
-  sha256: a503d9d321e7d0ee698cac204fa508c6b2a73fcc7803d4c3f3017bd16e24b281
+  sha256: 0e21b46c4ca7099e5924208a34a6cd244c4d1d6497760c380538d3d426854143
 
 build:
   merge_build_host: true  # [win]
