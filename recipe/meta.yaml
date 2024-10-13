@@ -1,4 +1,4 @@
-{% set version = "1.6.2" %}
+{% set version = "1.6.4" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/diveMove_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/diveMove/diveMove_{{ version }}.tar.gz
-  sha256: 18da128740a72fe0952d9c5dae9c12942ceca30d4a1ef81e6b598e989754ca12
+  sha256: eed99058863194771922eb434e80f045b02ec13ea770d9f84ea467115219e3a1
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
